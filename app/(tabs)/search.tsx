@@ -1,7 +1,8 @@
 import { ScreenView } from '@/components/ScreenView';
 import { Search } from '@/components/search';
 import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { useState } from 'react';
 import { FlatList, View } from 'react-native';
 
 export default function SearchScreen() {
@@ -50,23 +51,21 @@ const data: SearchItemProps[] = [
 ]
 
 const SearchList = () => {
+  const [search, setSearch] = useState<string>('')
   return (
-    <View className='p-2 mt-2'>
       <FlatList
         style={{ elevation: 0 }}
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={
           <View className='mb-5'>
-            <Search />
+            <Search search={search} setSearch={setSearch} />
           </View>
         }
         data={data}
         renderItem={({ item }) => <SearchedItem {...item} />}
       />
-    </View>
   );
 };
-
 
 const SearchedItem = ({ name, avatar }: SearchItemProps) => {
   return (
@@ -80,7 +79,7 @@ const SearchedItem = ({ name, avatar }: SearchItemProps) => {
       </View>
       {/* Add Friend */}
       <View className='px-2 py-2 bg-green-700 rounded-lg justify-center items-center'>
-        <ThemedText className='!text-sm text-white'>Add Friend</ThemedText>
+        <Ionicons name="person-add" size={18} color="white" />
       </View>
     </View>
   );

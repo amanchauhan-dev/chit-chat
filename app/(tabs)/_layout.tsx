@@ -6,7 +6,6 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import * as Haptics from 'expo-haptics';
-import { BlurView } from 'expo-blur';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 export default function TabLayout() {
   return (
@@ -63,7 +62,7 @@ export default function TabLayout() {
 
 export function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   return (
-    <View className=' flex flex-row bg-zinc-800 m-1 mb-5 mx-8  rounded-[25px] overflow-hidden justify-between items-center' style={{ elevation: 5 }} >
+    <View className=' flex flex-row bg-zinc-800 m-1 mb-5 mx-8 p-1  rounded-[30px] overflow-hidden justify-between items-center' style={{ elevation: 5 }} >
       {state.routes.map((route: any, index: any) => {
         const { options } = descriptors[route.key];
         const label = options.title || route.name;
@@ -88,10 +87,9 @@ export function CustomTabBar({ state, descriptors, navigation }: BottomTabBarPro
             accessibilityState={isFocused ? { selected: true } : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
             onPress={onPress}
-            className={`${isFocused ? 'bg-green-700' : 'tbg-transparent'} flex flex-col items-center justify-center rounded-[25px] px-4 py-2`}
+            className={`${isFocused ? 'bg-green-700' : 'bg-transparent'} flex flex-col items-center rounded-full justify-center  h-16 w-16`}
           >
             <AntDesign size={28} name={getIconName(route.name)} color={isFocused ? '#d4d4d8' : '#16a10c'} />
-            <Text className={`${isFocused ? 'text-zinc-300' : 'text-green-600'}`}>{label}</Text>
           </TouchableOpacity>
         );
       })}
@@ -128,7 +126,7 @@ export function CustomHeader({ title }: { title: string }) {
   };
 
   return (
-    <View className='flex flex-row items-center bg-zinc-800 p-4 pl-5 mx-5 mt-[36px] rounded-[25px]' style={{ elevation: 5 }} >
+    <View className='flex flex-row items-center bg-transparent p-4 pl-5 mx-5 mt-[36px] rounded-[25px]' >
       <TouchableOpacity onPress={handleBackPress}>
       </TouchableOpacity>
       <Text className='text-green-500 text-2xl font-bold'>{title?.substring(0, 1).toLocaleUpperCase() + title?.substring(1)}</Text>

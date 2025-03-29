@@ -2,6 +2,7 @@ import { ScreenView } from '@/components/ScreenView';
 import { Search } from '@/components/search';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { useState } from 'react';
 import { FlatList, ScrollView, View } from 'react-native';
 
 export default function HomeScreen() {
@@ -11,9 +12,6 @@ export default function HomeScreen() {
     </ScreenView>
   );
 }
-
-
-
 
 const Filter = () => {
   return (
@@ -82,21 +80,20 @@ const data: ChatItemProps[] = [
 ]
 
 const ChatList = () => {
+  const [search, setSearch] = useState<string>('')
   return (
-    <View className='p-2 mt-2'>
       <FlatList
         style={{ elevation: 0 }}
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={
           <View className='mb-5'>
-            <Search />
+            <Search search={search} setSearch={setSearch} />
             <Filter />
           </View>
         }
         data={data}
         renderItem={({ item }) => <ChatItem {...item} />}
       />
-    </View>
   );
 };
 
@@ -110,7 +107,7 @@ const ChatItem = ({ name, avatar, lastMessage, lastMessageDate, lastMessageTime,
       <View className='flex-1 ml-3'>
         <ThemedText className='text-lg font-semibold'>{name}</ThemedText>
         <ThemedText className='!text-sm text-zinc-400'>{lastMessage}</ThemedText>
-        <ThemedText className='!text-sm text-zinc-400'>{lastMessageDate}</ThemedText>
+        <ThemedText className='!text-sm !text-zinc-500'>{lastMessageDate}</ThemedText>
       </View>
       {/* Count and Date */}
       <View className='flex flex-col justify-center items-center'>
@@ -119,7 +116,7 @@ const ChatItem = ({ name, avatar, lastMessage, lastMessageDate, lastMessageTime,
             <ThemedText className='!text-sm text-center'>{unreadCount}</ThemedText>
           </View>
         )}
-        <ThemedText className='!text-sm text-zinc-400'>{lastMessageTime}</ThemedText>
+        <ThemedText className='!text-sm !text-zinc-500'>{lastMessageTime}</ThemedText>
       </View>
     </View>
   );
