@@ -6,8 +6,7 @@ import ved from "@/assets/video.mp4"
 
 export default function VideoScreen() {
   const player = useVideoPlayer(ved, player => {
-    player.loop = true;
-    player.play();
+    player.loop = false;
   });
 
 

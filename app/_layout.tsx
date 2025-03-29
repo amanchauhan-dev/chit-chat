@@ -41,7 +41,7 @@ export default function RootLayout() {
         >
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />
-          <Stack.Screen name="edit-avatar" />
+          <Stack.Screen name="edit-profile" />
           <Stack.Screen name="chat-window" options={{ headerShown: false }} />
         </Stack>
         <StatusBar style='light' />
@@ -56,8 +56,8 @@ export default function RootLayout() {
 
 export function CustomHeader({ title }: { title: string }) {
   const navigation = useNavigation();
-  if (title == 'edit-avatar') {
-    title = 'Edit Profile Picture'
+  if (title == 'edit-profile') {
+    title = 'Edit Profile'
   }
   const handleBackPress = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
