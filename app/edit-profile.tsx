@@ -48,7 +48,7 @@ export default function EditProfileScreen() {
                 </View>
                 <View className='flex gap-1'>
                     <ThemedText>Email</ThemedText>
-                    <Input defaultValue='john.doe@gmail.com'  placeholder='Name' />
+                    <Input defaultValue='john.doe@gmail.com' placeholder='Name' />
                 </View>
                 <View className='flex flex-row gap-3' style={{ justifyContent: 'flex-end' }}>
                     <Button style={{ backgroundColor: 'red' }}>CANCEL</Button>
