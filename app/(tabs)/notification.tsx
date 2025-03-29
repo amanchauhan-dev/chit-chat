@@ -132,9 +132,11 @@ const NotificationItem = ({ type, requester, id, title, createdAt, description }
         </View>
       </View>
       {requester && type === "friend_request" && (
-        <View className='flex flex-row items-center justify-center w-12 h-12 rounded-full bg-zinc-800 ml-3'>
+        <View className='flex flex-row gap-2 items-center justify-center  rounded-full ml-3'>
+          <Ionicons name="trash" size={24} color="white" />
           <Ionicons name="person-add" size={24} color="white" />
-        </View>)
+        </View>
+        )
       }
     </View>
   );

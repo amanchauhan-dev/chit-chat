@@ -71,7 +71,7 @@ const SearchedItem = ({ name, avatar }: SearchItemProps) => {
   return (
     <View className='py-3 px-0 border-b items-center border-zinc-800 flex flex-row' style={{ elevation: 0 }}>
       {/* Avatar */}
-      <View className='w-14 h-14 rounded-full bg-zinc-800' />
+      <View className='w-16 h-16 rounded-full bg-zinc-800' />
       {/* Details */}
       <View className='flex-1 ml-3'>
         <ThemedText className='text-lg font-semibold'>{name}</ThemedText>
