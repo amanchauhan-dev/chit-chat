@@ -88,10 +88,10 @@ export function CustomTabBar({ state, descriptors, navigation }: BottomTabBarPro
             accessibilityState={isFocused ? { selected: true } : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
             onPress={onPress}
-            className={`${isFocused ? 'bg-green-600' : 'tbg-transparent'} flex flex-col items-center justify-center rounded-[25px] px-4 py-2`}
+            className={`${isFocused ? 'bg-green-700' : 'tbg-transparent'} flex flex-col items-center justify-center rounded-[25px] px-4 py-2`}
           >
-            <AntDesign size={28} name={getIconName(route.name)} color={isFocused ? '#fff' : '#16a10c'} />
-            <Text className={`${isFocused ? 'text-white' : 'text-green-600'}`}>{label}</Text>
+            <AntDesign size={28} name={getIconName(route.name)} color={isFocused ? '#d4d4d8' : '#16a10c'} />
+            <Text className={`${isFocused ? 'text-zinc-300' : 'text-green-600'}`}>{label}</Text>
           </TouchableOpacity>
         );
       })}
