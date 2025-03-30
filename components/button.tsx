@@ -4,10 +4,10 @@ import { ThemedText } from './ThemedText'
 
 
 
-const Button = ({ children, className,...rest }: TouchableOpacityProps) => {
+const Button = ({ children, className, ...rest }: TouchableOpacityProps) => {
     return (
         <TouchableOpacity {...rest} className={`p-1 bg-green-600 rounded-lg px-3 ${className}`}>
-            <ThemedText className=''>{children}</ThemedText>
+            <ThemedText className='text-center'>{children}</ThemedText>
         </TouchableOpacity>
     )
 }

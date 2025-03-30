@@ -1,13 +1,14 @@
-import { Tabs, useNavigation } from 'expo-router';
-import React from 'react';
-import { Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Tabs, useNavigation, } from 'expo-router';
+import { Platform, Text, TouchableOpacity, View } from 'react-native';
 import { HapticTab } from '@/components/HapticTab';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import * as Haptics from 'expo-haptics';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
+
 export default function TabLayout() {
+
   return (
     <View className='flex flex-1 bg-zinc-900'>
       <Tabs
@@ -56,9 +57,6 @@ export default function TabLayout() {
     </View>
   );
 }
-
-
-
 
 export function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   return (
