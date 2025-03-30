@@ -5,7 +5,6 @@ import { Image, TextInput, View } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import AvatarImage from '@/assets/images/image1.jpg';
 import { Link } from 'expo-router';
-import { Input } from '@/components/Input';
 export default function ProfileScreen() {
   return (
     <ScreenView>
@@ -32,7 +31,12 @@ export default function ProfileScreen() {
         {/* status */}
         <View className='mt-10'>
           <ThemedText>Bio</ThemedText>
-          <Input className='!text-lg' multiline defaultValue='Lorem ipsum dolor sit amet
+          <TextInput className={` px-3 text-white !text-lg rounded-2xl`} style={[{
+            borderWidth: 2,
+            borderColor: '#27272a'
+          }]}
+            multiline
+            defaultValue='Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Pariatur magni incidunt modi deleniti quia
             labore deserunt vitae neque natus officia cupiditate esse eveniet
             veritatis ullam amet, numquam, eos odit in 😇🧑‍🎓.'/>

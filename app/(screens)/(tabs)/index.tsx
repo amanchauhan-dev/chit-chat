@@ -19,9 +19,9 @@ const Filter = () => {
   return (
     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
       <View className=' mt-4 flex flex-row gap-3'>
-        <ThemedView className='px-4 py-[2px]  rounded-lg'><ThemedText className='text-sm' style={{ fontSize: 15 }}>All</ThemedText></ThemedView>
-        <ThemedView className='px-4 py-[2px] rounded-lg'><ThemedText className='text-sm' style={{ fontSize: 15 }}>Unread</ThemedText></ThemedView>
-        <ThemedView className='px-4 py-[2px] rounded-lg'><ThemedText className='text-sm' style={{ fontSize: 15 }}>Groups</ThemedText></ThemedView>
+        <TouchableOpacity><ThemedView className='px-4 py-[2px]  rounded-lg'><ThemedText className='text-sm' style={{ fontSize: 15 }}>All</ThemedText></ThemedView></TouchableOpacity>
+        <TouchableOpacity><ThemedView className='px-4 py-[2px] rounded-lg'><ThemedText className='text-sm' style={{ fontSize: 15 }}>Unread</ThemedText></ThemedView></TouchableOpacity>
+        <TouchableOpacity><ThemedView className='px-4 py-[2px] rounded-lg'><ThemedText className='text-sm' style={{ fontSize: 15 }}>Groups</ThemedText></ThemedView></TouchableOpacity>
       </View>
     </ScrollView>
   )

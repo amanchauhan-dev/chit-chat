@@ -14,7 +14,7 @@ export const Input = ({ postChild = <></>, preChild = <></>, placeholderTextColo
         }]}>
             {preChild}
             <TextInput
-                className="flex-1 text-white"
+                className="flex-1 !text-white"
                 placeholderTextColor={placeholderTextColor}
                 {...rest}
             />
