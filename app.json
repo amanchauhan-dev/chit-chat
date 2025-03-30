@@ -1,20 +1,26 @@
 {
   "expo": {
-    "name": "Chit-Chat",
-    "slug": "chit-chat",
+    "name": "Chat App",
+    "slug": "chat-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#18181b",
+      "color": "#fff"
+    },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/splash-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#18181b"
       }
     },
     "web": {
@@ -30,7 +36,7 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#18181b"
         }
       ],
       "expo-video"

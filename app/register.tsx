@@ -48,7 +48,7 @@ const RegisterScreen = () => {
             </View>
             {/* submit */}
             <View className="" style={{ width: Dimensions.get('window').width - 80 }}>
-                <Button onPress={handleRegister} className="w-full p-3 py-2 text-center">Login</Button>
+                <Button onPress={handleRegister} className="w-full p-3 py-2 text-center">REGISTER</Button>
             </View>
             <View className="" style={{ width: Dimensions.get('window').width - 80 }}>
                 <ThemedText>Already have a account? <Link href={'/login'} className="text-green-600 ml-3">Login</Link></ThemedText>
