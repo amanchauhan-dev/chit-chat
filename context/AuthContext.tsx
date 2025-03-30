@@ -16,7 +16,7 @@ interface AuthContextProps {
 export const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 const AuthProvider = ({ children }: { children?: React.ReactNode }) => {
-    const [login, setLogin] = useState<boolean>(true);
+    const [login, setLogin] = useState<boolean>(false);
     const [user, setUser] = useState<User | null>(null);
 
     return (

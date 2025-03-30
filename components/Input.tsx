@@ -1,13 +1,24 @@
-import { TextInput, TextInputProps } from "react-native"
+import { TextInput, TextInputProps, View } from "react-native"
 
-export const Input = ({ className, style, placeholderTextColor = 'white', ...rest }: TextInputProps) => {
-    return <TextInput
-        className={`text-white p-3  rounded-lg ${className}`}
-        style={[{
+
+interface InputProps extends TextInputProps {
+    preChild?: React.ReactNode;
+    postChild?: React.ReactNode;
+}
+
+export const Input = ({ postChild = <></>, preChild = <></>, placeholderTextColor = 'white', ...rest }: InputProps) => {
+    return (
+        <View className={` px-2 justify-center items-center  rounded-lg overflow-hidden flex flex-row `} style={[{
             borderWidth: 2,
             borderColor: '#27272a'
-        }, style]}
-        placeholderTextColor={placeholderTextColor}
-        {...rest}
-    />
+        }]}>
+            {preChild}
+            <TextInput
+                className="flex-1 text-white"
+                placeholderTextColor={placeholderTextColor}
+                {...rest}
+            />
+            {postChild}
+        </View>
+    )
 }

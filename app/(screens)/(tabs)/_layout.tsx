@@ -116,7 +116,7 @@ const getIconName = (routeName: string): any => {
 export function CustomHeader({ title }: { title: string }) {
   const navigation = useNavigation();
   if (title == 'index') {
-    title = 'Chat'
+    title = 'Chats'
   }
   const handleBackPress = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
